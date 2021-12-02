@@ -64,8 +64,8 @@ case $CHOICE in
     1 )
 			git config --global pull.rebase false
 			git config --global push.default simple
-			git config --global user.name "Erik Dubois"
-			git config --global user.email "erik.dubois@gmail.com"
+			git config --global user.name "ArcoLinux"
+			git config --global user.email "arcolinuxinfo@gmail.com"
 			sudo git config --system core.editor nano
 			#git config --global credential.helper cache
 			#git config --global credential.helper 'cache --timeout=32000'
