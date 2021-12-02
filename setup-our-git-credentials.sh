@@ -27,7 +27,12 @@
 
 #setting up git
 #https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config
+#https://medium.com/clarusway/how-to-use-git-github-without-asking-for-authentication-always-passwordless-usage-of-private-git-8c32489bc2e9
 
+project=$(basename `pwd`)
+echo "-----------------------------------------------------------------------------"
+echo "this is project https://github.com/arcolinux/"$project
+echo "-----------------------------------------------------------------------------"
 
 echo
 tput setaf 1
@@ -40,15 +45,8 @@ echo "Select the correct desktop"
 echo
 echo "0.  Do nothing"
 echo "1.  Erik"
-echo "2.  Marco"
-echo "3.  Raniel"
-echo "4.  John"
-echo "5.  Steve"
-echo "6.  Brad"
-echo "7.  fake1"
-echo "8.  fake2"
-echo "9.  fake3"
-echo "10. fake4"
+echo "2.  Raniel"
+echo "3.  John"
 echo "Type the number..."
 
 read CHOICE
@@ -69,19 +67,13 @@ case $CHOICE in
 			git config --global user.name "Erik Dubois"
 			git config --global user.email "erik.dubois@gmail.com"
 			sudo git config --system core.editor nano
-			git config --global credential.helper cache
-			git config --global credential.helper 'cache --timeout=32000'
+			#git config --global credential.helper cache
+			#git config --global credential.helper 'cache --timeout=32000'
+      git remote set-url origin git@github.com:arcolinux/$project
+      echo
+      echo "Everything set"
       ;;
     2 )
-			git config --global pull.rebase false
-			git config --global push.default simple
-			git config --global user.name "Marco Obaid"
-			git config --global user.email "marco.obaid@gmail.com"
-			sudo git config --system core.editor nano
-			git config --global credential.helper cache
-			git config --global credential.helper 'cache --timeout=32000'
-      ;;
-    3 )
 			git config --global pull.rebase false
 			git config --global push.default simple
 			git config --global user.name "Raniel Laguna"
@@ -90,16 +82,7 @@ case $CHOICE in
 			git config --global credential.helper cache
 			git config --global credential.helper 'cache --timeout=32000'
       ;;
-    4 )
-			git config --global pull.rebase false
-			git config --global push.default simple
-			git config --global user.name "John Blevins"
-			git config --global user.email "samurailostinjapan@gmail.com"
-			sudo git config --system core.editor nano
-			git config --global credential.helper cache
-			git config --global credential.helper 'cache --timeout=32000'
-      ;;
-    5 )
+    3 )
 			git config --global pull.rebase false
 			git config --global push.default simple
 			git config --global user.name "Steve Younger"
@@ -108,39 +91,12 @@ case $CHOICE in
 			git config --global credential.helper cache
 			git config --global credential.helper 'cache --timeout=32000'
       ;;
-    6 )
-			git config --global pull.rebase false
-			git config --global push.default simple
-			git config --global user.name "Brad Heffernan"
-			git config --global user.email "ph3onix83@gmail.com"
-			sudo git config --system core.editor nano
-			git config --global credential.helper cache
-			git config --global credential.helper 'cache --timeout=32000'
-      ;;
-    7 )
-      echo
-      ;;
-    8 )
-      echo
-      ;;
-    9 )
-      echo
-      ;;
-    10 )
-      echo
-      ;;
     * )
       echo "#################################"
       echo "Choose the correct number"
       echo "#################################"
       ;;
 esac
-
-echo "###########################################################"
-echo "Github credentials have been set"
-echo "Delete the ~/.cache/git folder if you made a mistake or"
-echo "if you want to switch to your personal github"
-echo "###########################################################"
 
 echo "################################################################"
 echo "###################    T H E   E N D      ######################"
