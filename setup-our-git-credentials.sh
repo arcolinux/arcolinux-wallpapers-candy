@@ -28,6 +28,7 @@
 #setting up git
 #https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config
 #https://medium.com/clarusway/how-to-use-git-github-without-asking-for-authentication-always-passwordless-usage-of-private-git-8c32489bc2e9
+#https://blog.nillsf.com/index.php/2021/05/27/github-sso-using-password-protected-ssh-keys
 
 project=$(basename `pwd`)
 echo "-----------------------------------------------------------------------------"
@@ -46,7 +47,7 @@ echo
 echo "0.  Do nothing"
 echo "1.  Erik"
 echo "2.  Raniel"
-echo "3.  John"
+echo "3.  Steve"
 echo "Type the number..."
 
 read CHOICE
